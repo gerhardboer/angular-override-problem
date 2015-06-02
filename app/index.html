@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
-<body ng-app="main" ng-controller="MainController as mainController" layout="column">
+<body ng-app="main" ng-controller="MainController as mainController">
   {{mainController.name}}
 </body>
-<script type="application/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-rc.2/angular.min.js"></script>
+<script type="application/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+<!--<script type="application/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-rc.2/angular.min.js"></script>-->
+
 <script>
   (function (ng) {
     var libModule = ng.module('lib', []);
@@ -28,5 +30,4 @@
     }]);
   })(angular);
 </script>
-</body>
 </html>
