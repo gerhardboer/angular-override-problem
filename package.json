@@ -1,5 +1,5 @@
 {
-  "name": "angular override bug?",
+  "name": "angular-override-problem",
   "private": true,
   "version": "0.0.1",
   "description": "services and factories are bound by name to angular itself, so services or factories from different modules can be overridden",
