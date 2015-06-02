@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body ng-app="main" ng-controller="main.MainController as mainController">
+
+<script type="application/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-rc.2/angular.min.js"></script>
+
+<script>
+  (function (ng) {
+    var libModule = ng.module('lib', []);
+    libModule.service("lib.HomeService", [function () {
+      var homeService = this;
+      homeService.getName = function () {
+        return "Home Service  - 1";
+      }
+    }]);
+    var domainModule = ng.module('domain', []);
+    domainModule.service("domain.HomeService", function () {
+      var homeService = this;
+      homeService.getName = function () {
+        return "HomeService Service - 2";
+      };
+    });
+    var mainModule = ng.module('main', ['domain', 'lib']);
+    mainModule.controller("main.MainController", ['domain.HomeService', function (HomeService) {
+      var mainController = this;
+      mainController.name = HomeService.getName();
+    }]);
+  })(angular);
+</script>
+</body>
+</html>
